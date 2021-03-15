@@ -1,0 +1,42 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion this.rootProject.android.compileSdkVersion
+
+    defaultConfig {
+        applicationId this.rootProject.android.applicationId
+        minSdkVersion this.rootProject.android.minSdkVersion
+        targetSdkVersion this.rootProject.android.targetSdkVersion
+        versionCode this.rootProject.android.versionCode
+        versionName this.rootProject.android.versionName
+        multiDexEnabled this.rootProject.android.multiDexEnabled
+        testInstrumentationRunner this.rootProject.android.testInstrumentationRunner
+    }
+
+    buildTypes {
+        release { // 混淆
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: "libs", include: ["*.jar"])
+    implementation this.rootProject.depsLibs.appcompat
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    testImplementation this.rootProject.depsLibs.testImplementation
+    androidTestImplementation this.rootProject.depsLibs.androidTestImplementation1
+    androidTestImplementation this.rootProject.depsLibs.androidTestImplementation2
+
+    //rxjava库
+    implementation rootProject.depsLibs.rxjava
+    implementation rootProject.depsLibs.rxandroid
+
+    //基础UI库
+    implementation project(':lib_commin_ui')
+    //网络库
+    implementation project(':lib_network')
+    //图片库
+    implementation project(':lib_image_loader')
+}
