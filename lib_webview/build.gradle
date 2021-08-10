@@ -1,7 +1,7 @@
 apply plugin: 'com.android.library'
 apply plugin: 'maven'
 
-def pomName = this.getName()
+def pomName = 'libWebview'
 def pomVersion = '1.0.0-SNAPSHOT'
 def pomDescription = 'lib-webview for all projects.'
 
@@ -45,7 +45,7 @@ uploadArchives { // 上传脚本
                 name pomName
                 version pomVersion
                 description pomDescription
-                artifactId pomVersion
+                artifactId pomName
                 groupId POM_GPOUPID
                 packaging POM_PACKAGING
             }

@@ -25,6 +25,7 @@ dependencies {
     implementation fileTree(dir: "libs", include: ["*.jar"])
     implementation this.rootProject.depsLibs.appcompat
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation 'com.google.android.material:material:1.0.0'
     testImplementation this.rootProject.depsLibs.testImplementation
     androidTestImplementation this.rootProject.depsLibs.androidTestImplementation1
     androidTestImplementation this.rootProject.depsLibs.androidTestImplementation2
